@@ -1,0 +1,4 @@
+flask
+zappa
+giphy_client
+pprint

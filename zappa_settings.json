@@ -1,0 +1,34 @@
+{
+    "dev": {
+        "project_name": "cashcat",
+        "runtime": "python3.6",
+        "apigateway_enabled": false,
+        "s3_bucket": "<name>-zappa-s3-bucket",
+        "keep_warm": false,
+        "slim_handle": true,
+        "events": [{
+           "function": "my_app.lambda_handler", // The function to execute
+           "expression": "cron(0 9 ? * FRI *)" // When to execute it (in cron or rate format)
+       }],
+       "environment_variables":{
+           "API_KEY": "xxxxxx",
+           "WEBHOOK_URL": "https://hooks.slack.com/services/xxxxxxx/xxxxx/xxxxx"
+       }
+    },
+      "prod": {
+        "project_name": "cashcat",
+        "runtime": "python3.6",
+        "apigateway_enabled": false,
+        "s3_bucket": "<name>-zappa-s3-bucket",
+        "keep_warm": false,
+        "slim_handle": true,
+        "events": [{
+           "function": "my_app.lambda_handler", // The function to execute
+           "expression": "cron(0 9 ? * FRI *)" // When to execute it (in cron or rate format)
+       }],
+       "environment_variables":{
+           "API_KEY": "xxxxxx",
+           "WEBHOOK_URL": "https://hooks.slack.com/services/xxxxxxxx/xxxxxxxx/xxxxxxxx"
+       }
+    }
+}
